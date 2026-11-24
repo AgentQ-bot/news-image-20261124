@@ -59,25 +59,33 @@ def wrap(draw: ImageDraw.ImageDraw, text: str, fnt: ImageFont.FreeTypeFont,
     return lines
 
 
+# Rebuilt 2026-11-24 ~15:30 CST with stories that genuinely broke on
+# 24 Nov 2026 (each corroborated by >=2 sources; see NOTES.md). The
+# previous six (Nvidia/Huang, COP31, Ukraine ships off Libya, Manchester
+# evacuation, Iran flogging, Indonesia fire) all broke 22-23 Nov and were
+# dropped. Two stories broke overnight 23->24 Nov local time and were
+# reported in the first hours of 24 Nov UTC (Poland drone, Colombia bomb);
+# the Megaspeed item is Singapore's 24 Nov response, not Monday's US
+# blacklisting itself.
 STORIES = [
-    ("MARKETS", (176, 92, 8),
-     "NVIDIA BRINGS BACK HUANG",
-     "Huang returns as CEO after resigning on 12 Nov; Trump says he \u201cmade the deal\u201d. Nasdaq +6.5%."),
-    ("CLIMATE", (31, 120, 76),
-     "CLIMATE TALKS COLLAPSE",
-     "COP31 ends with no deal as the EU rejects the final text from Turkey and Australia."),
-    ("WAR", (140, 32, 32),
-     "UKRAINE DRONES HIT RUSSIAN SHIPS",
-     "Two Russian ships struck off Libya on Sunday; Russian strikes kill 12 in Kyiv region."),
-    ("BRITAIN", (16, 70, 130),
-     "12,000 EVACUATED IN MANCHESTER",
-     "Concert at Manchester\u2019s Co-op Live cleared after an unknown substance is released."),
-    ("RIGHTS", (110, 52, 130),
-     "IRAN FLOGS SINGER 74 LASHES",
-     "Parastoo Ahmadi and four crew members each receive 74 lashes for a concert without hijab."),
-    ("DISASTER", (120, 74, 10),
-     "24 KILLED IN INDONESIA FACTORY FIRE",
-     "Blaze at a sweet factory kills 24; dozens still missing as rescuers search the site."),
+    ("EUROPE", (140, 32, 32),
+     "RUSSIAN DRONE ENTERS POLAND",
+     "A Russian UAV briefly violates Polish airspace overnight; Warsaw authorises a shoot-down but holds fire."),
+    ("BUSINESS", (176, 92, 8),
+     "SPACEX-TESLA NAME MERGER CHIEFS",
+     "Five directors will guide talks on a $3.5tn tie-up; bankers hired to frame the deal."),
+    ("ASIA", (16, 70, 130),
+     "HASINA PLANS RETURN ON 16 DEC",
+     "Ousted PM to fly home from exile in India on Victory Day aboard state carrier Biman."),
+    ("TRADE", (31, 120, 76),
+     "SINGAPORE KEEPS PROBING MEGASPEED",
+     "PM Wong vows to keep investigating the Nvidia-linked firm a day after the US blacklisted it."),
+    ("AMERICAS", (110, 52, 130),
+     "CAR BOMB HITS COLOMBIA OFFICE",
+     "Car bomb outside the Meta governor's office in Villavicencio injures 12; drug gangs blamed."),
+    ("SCIENCE", (120, 74, 10),
+     "BEAVER SUPERMOON PEAKS TODAY",
+     "November's full Moon - a supermoon - peaks at 9:53 a.m. EST near the Pleiades; first of three in a row."),
 ]
 
 
@@ -141,7 +149,7 @@ def main() -> None:
     d.rectangle([0, 972, W, H], fill=NAVY)
     ft_f = font(False, 16)
     d.text((W // 2, 990),
-           "24 NOVEMBER 2026  \u2022  As reported by Reuters and the BBC  "
+           "24 NOVEMBER 2026  \u2022  As reported by Reuters, the FT, ANI and others  "
            "\u2022  make.fun news-image-20261124",
            font=ft_f, fill="white", anchor="ma")
 
